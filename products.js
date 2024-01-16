@@ -22,7 +22,6 @@ createApp({
             })
             .catch((err) => {
                 location.href = './index.html';
-                console.log(err);
                 alert(err.response.data.message);
             })
         },
@@ -30,9 +29,7 @@ createApp({
         getProducts(){
             axios.get(`${url}/api/${myPath}/admin/products/`)
             .then((res) => {
-                console.log(res.data.products)
                 this.products = res.data.products;
-                console.log(this.products)
             })
             .catch((err) => {
                 location.href = './index.html';
